@@ -2,8 +2,11 @@
 
 . ./set_env.sh
 . ./check_env.sh
+. ./check_repo.sh
 
-cd $project
+cd ../$project
+git checkout -b "typescript-migration-${branch}"
+git checkout "typescript-migration-${branch}" # in case the branch already existed
 
 # rename files
 for dir in src __tests__ storybook __sampledata__

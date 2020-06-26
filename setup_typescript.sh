@@ -2,17 +2,13 @@
 
 . ./set_env.sh
 . ./check_env.sh
-
-# Ensure horsehoe has been cloned
-if [ ! -d "../$project" ]
-then
-    echo "Directory ../$project does not exist. Clone $project first."
-    exit 1
-fi
+. ./check_repo.sh
 
 cd ../$project
-echo "Installing typescript dependencies in $PWD"
 git checkout -b "typescript-migration-${branch}"
+git checkout "typescript-migration-${branch}" # in case the branch already existed
+
+echo "Installing typescript dependencies in $PWD"
 
 ###### CONFIGURE FOR TYPESCRIPT
 # 1. install typescript depdencies
