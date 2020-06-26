@@ -1,0 +1,11 @@
+{
+  "name": "flow-to-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sbaruth/flow-to-typescript.git",
+  "author": "Shaun Baruth <sbaruth@bloomberg.net>",
+  "license": "MIT",
+  "dependencies": {
+    "@khanacademy/flow-to-ts": "^0.1.6"
+  }
+}
