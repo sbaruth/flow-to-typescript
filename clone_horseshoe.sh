@@ -7,7 +7,7 @@
 cd ../
 echo cloning github.com/$user/$project
 git clone https://${user}:${token}@github.com/$user/$project
-cd horseshoe
+cd $project
 git checkout $branch
 
 yarn install

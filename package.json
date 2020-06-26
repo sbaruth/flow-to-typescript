@@ -9,6 +9,7 @@
     "@khanacademy/flow-to-ts": "^0.1.6"
   },
   "scripts": {
-    "clone": "./clone_horseshoe.sh"
+    "clone": "./clone_horseshoe.sh",
+    "migrate": "./setup_typescript.sh"
   }
 }
