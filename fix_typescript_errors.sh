@@ -2,13 +2,16 @@
 
 . ./set_env.sh
 . ./check_env.sh
+. ./check_repo.sh
 
-cd $project
+projectFolder=../$project
 
 #### FIX ERRORS MANUALLY
 # 2b. Fix some errors introduced by the tool
-cp ../GAEventConfig_types.tsx src/middleware/analytics/GAEventConfig/types.tsx
-cp ../mediaPlayer_types.tsx src/redux/mediaPlayer/types.tsx
+cp GAEventConfig_types.tsx $projectFolder/src/middleware/analytics/GAEventConfig/types.tsx
+cp mediaPlayer_types.tsx $projectFolder/src/redux/mediaPlayer/types.tsx
+
+cd $projectFolder
 
 errors=`yarn tsc | grep "error TS" | wc -l`
 git add .
@@ -17,8 +20,8 @@ git commit -m "typescript(errors=$errors): FIXED tool conversion errors manually
 
 # 3 Allow .android .ios flavors
 mv src/styles/ListViewStyles/styles.android.tsx src/styles/ListViewStyles/styles.android.js
-mv src/styles/ListViewStyles/index.tsx src/styles/ListViewStyles/index.js 
-mv src/styles/ListViewStyles/styles.ios.tsx src/styles/ListViewStyles/styles.ios.js 
+mv src/styles/ListViewStyles/index.tsx src/styles/ListViewStyles/index.js
+mv src/styles/ListViewStyles/styles.ios.tsx src/styles/ListViewStyles/styles.ios.js
 
 errors=`yarn tsc | grep "error TS" | wc -l`
 git add .
@@ -131,7 +134,7 @@ git commit -m "typescript(errors=$errors): removed \'void\' arg in Component<Pro
 # Upgrade libs to use their types
 yarn add react-navigation@3.4.0
 yarn add react-navigation-tabs@2.7.0
-yarn add --dev @types/react-native-orientation @types/node 
+yarn add --dev @types/react-native-orientation @types/node
 yarn add --dev @types/react-navigation
 
 errors=`yarn tsc | grep "error TS" | wc -l`
