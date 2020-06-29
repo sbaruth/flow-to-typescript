@@ -12,7 +12,7 @@ echo "Installing typescript dependencies in $PWD"
 
 ###### CONFIGURE FOR TYPESCRIPT
 # 1. install typescript depdencies
-yarn add --dev typescript @types/jest @types/react @types/react-native @types/react-test-renderer
+yarn add --dev typescript utility-types @types/jest @types/react @types/react-native @types/react-test-renderer
 
 cp ../tsconfig.json.flow_compliant_source_only tsconfig.json
 cp ../jest.config.js .

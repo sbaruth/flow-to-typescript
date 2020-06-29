@@ -8,6 +8,8 @@ cd ../$project
 git checkout -b "typescript-migration-${branch}"
 git checkout "typescript-migration-${branch}" # in case the branch already existed
 
+echo "Renaming .js file to .tsx files in $PWD"
+
 # rename files
 for dir in src __tests__ storybook __sampledata__
 do
