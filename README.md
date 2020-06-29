@@ -1,4 +1,19 @@
-* Use a SEPARATE DIRECTORY for the typescript migration.
+# Flow to Typescript
+
+### Usage
+- Clone `flow-to-typescript`. If you have an existing `horsehose` clone you'd like to run the migration on, make sure `flow-to-typescript` and `horseshoe` are in the same parent directory (siblings).
+- Configure `set_env.sh`
+- `yarn install`
+- `yarn clone` (optional, if you don't have `horsehose` cloned yet, or would like a fresh clone)
+- `yarn migrate`
+
+### Getting a git access token for yarn clone
+- Visit github.com -> Click on your Avatar -> Settings
+- Developer Settings -> Personal Access Tokens -> Generate new token
+- Scopes required:
+  - `Repo` - Full control of private repositories
+
+# Older Documentation
 
 ## Configure env properties
 * Configure set_env.sh 
