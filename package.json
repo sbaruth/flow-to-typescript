@@ -10,6 +10,6 @@
   },
   "scripts": {
     "clone": "./clone_horseshoe.sh",
-    "migrate": "./setup_typescript.sh && ./rename_resources.sh && ./migrate_resources_to_typescript.sh && ./fix_typescript_errors.sh"
+    "migrate": "./setup_typescript.sh && ./rename_resources.sh && ./migrate_resources_to_typescript.sh && ./fix_typescript_errors.sh && ./remove_flow.sh"
   }
 }

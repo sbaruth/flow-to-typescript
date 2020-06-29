@@ -1,9 +1,10 @@
 #!/bin/sh
 
 . ./set_env.sh
-./check_env.sh
+. ./check_env.sh
+. ./check_repo.sh
 
-cd $project
+cd ../$project
 
 yarn remove flow-bin eslint-plugin-flowtype
 
