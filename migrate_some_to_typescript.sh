@@ -2,14 +2,9 @@
 
 . ./set_env.sh
 . ./check_env.sh
+. ./check_repo.sh
 
-cd $project
-
-if [ ! -x "/usr/local/bin/flow-to-ts" ]
-then
-   echo "/usr/local/bin/flow-to-ts is not found"
-   exit 1
-fi
+cd ../$project
 
 for dir in src __tests__ storybook __sampledata__
 do
@@ -25,10 +20,10 @@ done
 git ls-files -m | egrep "src|__tests__|storybook|__sampledata__" | egrep ".tsx$" | while read file
 do
 	rm -f /tmp/file.tmp
-        flow-to-ts $file  > /tmp/file.tmp
+        npx flow-to-ts $file  > /tmp/file.tmp
         cp /tmp/file.tmp $file
         node_modules/prettier/bin-prettier.js --single-quote --trailing-comma es5 --write $file
-   
+
         sed -i '' -e '/Object/s/: Object/: any/g' $file
 
         sed -i '' -e '/FlowFixMe/s/\/\/ \$FlowFixMe/\/\/ \@ts-ignore/g' $file
